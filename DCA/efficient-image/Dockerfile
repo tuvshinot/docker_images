@@ -1,6 +1,7 @@
 FROM golang:1.12.4 AS compiler
 WORKDIR /helloworld
 COPY helloworld.go .
+# building go executable file
 RUN GOOS=linux go build -a -installsuffix cgo -o helloworld .
 
 FROM alpine:3.9.3
